@@ -1,30 +1,43 @@
-import Card from './Card';
+import Cards from "./Card/Cards";
+import Discount from "./Discount";
+import Login from "./Login/Login";
+import ConfirmationDialog from "./ConfirmationDialog/ConfirmationDialog";
+import { useState } from "react";
+import TabButton from "./TabButton";
 
 const App = () => {
-  return (
-    <div className="app">
-      <h1>Available Experts</h1>
-      <Card name="Anthony Blake">
-        <p>
-          Blake is a professor of Computer Science at the University of
-          Illinois.
-        </p>
-        <p>
-          <a href="mailto:blake@example.com">Email Anthony</a>
-        </p>
-      </Card>
+  const apps = {
+    login: {
+      name: "Login",
+      app: <Login />,
+    },
+    cards: { name: "Cards", app: <Cards /> },
+    discount: { name: "Discount", app: <Discount /> },
+    confirmation: { name: "Confirmation Dialog", app: <ConfirmationDialog /> },
+  }; 
+  let [selectedAppKey, setSelectedAppKey] = useState();
 
-      <Card name="Maria Miles">
-        <p>
-          Maria is a professor of Computer Science at the University of
-          Illinois.
-        </p>
-        <p>
-          <a href="mailto:blake@example.com">Email Maria</a>
-        </p>
-      </Card>
+  const handleSelect = (appKey) => {
+    setSelectedAppKey(appKey);
+  };
+
+  
+ 
+
+  return (
+    <div>
+      <menu>
+        {Object.keys(
+          apps).map((appKey) => (
+            <TabButton key={appKey} onSelect={() => handleSelect(appKey)}>
+              {apps[appKey].name}
+            </TabButton>
+          ))
+        }
+      </menu>
+      {selectedAppKey ?  apps[selectedAppKey].app : <div>Please select app</div>}
     </div>
   );
-}
+};
 
 export default App;
