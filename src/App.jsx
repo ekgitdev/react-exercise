@@ -5,6 +5,7 @@ import ConfirmationDialog from "./ConfirmationDialog/ConfirmationDialog";
 import { useState } from "react";
 import TabButton from "./TabButton";
 import TodoList from "./TODO/TodoList";
+import InputForm from "./Input/InputForm";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
     discount: { name: "Discount", app: <Discount /> },
     confirmation: { name: "Confirmation Dialog", app: <ConfirmationDialog /> },
     todo: { name: "TODO list", app: <TodoList/> },
+    input: { name: "Input Form", app: <InputForm/>}
   }; 
 
    
