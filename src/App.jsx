@@ -4,6 +4,8 @@ import Login from "./Login/Login";
 import ConfirmationDialog from "./ConfirmationDialog/ConfirmationDialog";
 import { useState } from "react";
 import TabButton from "./TabButton";
+import TodoList from "./TODO/TodoList";
+
 
 const App = () => {
   const apps = {
@@ -14,15 +16,17 @@ const App = () => {
     cards: { name: "Cards", app: <Cards /> },
     discount: { name: "Discount", app: <Discount /> },
     confirmation: { name: "Confirmation Dialog", app: <ConfirmationDialog /> },
+    todo: { name: "TODO list", app: <TodoList/> },
   }; 
+
+   
+
   let [selectedAppKey, setSelectedAppKey] = useState();
 
   const handleSelect = (appKey) => {
     setSelectedAppKey(appKey);
   };
 
-  
- 
 
   return (
     <div>
