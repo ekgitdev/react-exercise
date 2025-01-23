@@ -6,6 +6,7 @@ import { useState } from "react";
 import TabButton from "./TabButton";
 import TodoList from "./TODO/TodoList";
 import InputForm from "./Input/InputForm";
+import Buttons from "./Buttons/Buttons";
 
 
 const App = () => {
@@ -18,7 +19,8 @@ const App = () => {
     discount: { name: "Discount", app: <Discount /> },
     confirmation: { name: "Confirmation Dialog", app: <ConfirmationDialog /> },
     todo: { name: "TODO list", app: <TodoList/> },
-    input: { name: "Input Form", app: <InputForm/>}
+    input: { name: "Input Form", app: <InputForm/>},
+    buttons: { name: "Buttons", app: <Buttons/>}
   }; 
 
    
