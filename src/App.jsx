@@ -7,6 +7,7 @@ import TabButton from "./TabButton";
 import TodoList from "./TODO/TodoList";
 import InputForm from "./Input/InputForm";
 import Buttons from "./Buttons/Buttons";
+import Workouts from "./workout/Workouts";
 
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
     confirmation: { name: "Confirmation Dialog", app: <ConfirmationDialog /> },
     todo: { name: "TODO list", app: <TodoList/> },
     input: { name: "Input Form", app: <InputForm/>},
-    buttons: { name: "Buttons", app: <Buttons/>}
+    buttons: { name: "Buttons", app: <Buttons/>},
+    workouts: { name: "Workouts", app: <Workouts/>}
   }; 
 
    
